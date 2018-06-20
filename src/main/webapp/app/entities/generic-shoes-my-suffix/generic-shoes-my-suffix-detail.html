@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Generic Shoes</span> {{vm.genericShoes.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Shoe Type</span></dt>
+        <dd>
+            <span>{{vm.genericShoes.shoeType}}</span>
+        </dd>
+        <dt><span>Brand</span></dt>
+        <dd>
+            <span>{{vm.genericShoes.brand}}</span>
+        </dd>
+        <dt><span>Color</span></dt>
+        <dd>
+            <span>{{vm.genericShoes.color}}</span>
+        </dd>
+        <dt><span>Size</span></dt>
+        <dd>
+            <span>{{vm.genericShoes.size}}</span>
+        </dd>
+        <dt><span>Storage Shoes</span></dt>
+        <dd>
+            <a ui-sref="storage-shoes-my-suffix-detail({id:vm.genericShoes.storageShoes.id})">{{vm.genericShoes.storageShoes.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="generic-shoes-my-suffix-detail.edit({id:vm.genericShoes.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

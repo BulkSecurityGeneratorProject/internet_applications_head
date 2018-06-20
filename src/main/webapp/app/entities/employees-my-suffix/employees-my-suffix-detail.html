@@ -1,0 +1,69 @@
+
+<div>
+    <h2><span>Employees</span> {{vm.employees.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Login</span></dt>
+        <dd>
+            <span>{{vm.employees.login}}</span>
+        </dd>
+        <dt><span>Password</span></dt>
+        <dd>
+            <span>{{vm.employees.password}}</span>
+        </dd>
+        <dt><span>First Name</span></dt>
+        <dd>
+            <span>{{vm.employees.firstName}}</span>
+        </dd>
+        <dt><span>Last Name</span></dt>
+        <dd>
+            <span>{{vm.employees.lastName}}</span>
+        </dd>
+        <dt><span>Position</span></dt>
+        <dd>
+            <span>{{vm.employees.position}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.employees.email}}</span>
+        </dd>
+        <dt><span>Active</span></dt>
+        <dd>
+            <span>{{vm.employees.active}}</span>
+        </dd>
+        <dt><span>Create Date</span></dt>
+        <dd>
+            <span>{{vm.employees.createDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Salary</span></dt>
+        <dd>
+            <span>{{vm.employees.salary}}</span>
+        </dd>
+        <dt><span>Branch</span></dt>
+        <dd>
+            <span>{{vm.employees.branch}}</span>
+        </dd>
+        <dt><span>Roles</span></dt>
+        <dd>
+            <span ng-repeat="roles in vm.employees.roles">
+                <a ui-sref="roles-my-suffix-detail({id: roles.id})">{{roles.roleName}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span>Magazine</span></dt>
+        <dd>
+            <a ui-sref="magazine-my-suffix-detail({id:vm.employees.magazine.id})">{{vm.employees.magazine.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="employees-my-suffix-detail.edit({id:vm.employees.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

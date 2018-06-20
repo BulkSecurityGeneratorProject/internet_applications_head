@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "model",
+            "otherEntityName": "models",
+            "otherEntityRelationshipName": "genericShoes"
+        },
+        {
+            "relationshipName": "storageShoes",
+            "otherEntityName": "storageShoes",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "shoeType",
+            "fieldType": "SHOETYPES",
+            "fieldValues": "WOMAN,MAN,KID"
+        },
+        {
+            "fieldName": "brand",
+            "fieldType": "SHOEBRANDS",
+            "fieldValues": "NIKE,ADIDAS,LASOCKI,NEW_BALANCE"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "SHOECOLORS",
+            "fieldValues": "BLACK,WHITE,GREY,GOLDEN,PINK,RED"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180319143413",
+    "entityTableName": "generic_shoes",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

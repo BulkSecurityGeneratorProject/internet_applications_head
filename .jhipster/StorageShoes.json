@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "shoe",
+            "otherEntityName": "genericShoes",
+            "otherEntityRelationshipName": "storageShoes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "magazine",
+            "otherEntityName": "magazine",
+            "otherEntityRelationshipName": "storageShoes"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180319143414",
+    "entityTableName": "storage_shoes",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

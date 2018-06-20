@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Magazine.
+    -->
+    <changeSet id="20180319143415-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="storage_shoes_id"
+                                 baseTableName="magazine"
+                                 constraintName="fk_magazine_storage_shoes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="storage_shoes"/>
+
+    </changeSet>
+</databaseChangeLog>

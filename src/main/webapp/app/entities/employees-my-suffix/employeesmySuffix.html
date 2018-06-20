@@ -1,0 +1,84 @@
+<div>
+    <h2>Employees</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="employees-my-suffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Employees
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Login</span></th>
+                    <th><span>Password</span></th>
+                    <th><span>First Name</span></th>
+                    <th><span>Last Name</span></th>
+                    <th><span>Position</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Active</span></th>
+                    <th><span>Create Date</span></th>
+                    <th><span>Salary</span></th>
+                    <th><span>Branch</span></th>
+                    <th><span>Roles</span></th>
+                    <th><span>Magazine</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employees in vm.employees track by employees.id">
+                    <td><a ui-sref="employees-my-suffix-detail({id:employees.id})">{{employees.id}}</a></td>
+                    <td>{{employees.login}}</td>
+                    <td>{{employees.password}}</td>
+                    <td>{{employees.firstName}}</td>
+                    <td>{{employees.lastName}}</td>
+                    <td>{{employees.position}}</td>
+                    <td>{{employees.email}}</td>
+                    <td>{{employees.active}}</td>
+                    <td>{{employees.createDate | date:'medium'}}</td>
+                    <td>{{employees.salary}}</td>
+                    <td>{{employees.branch}}</td>
+                    <td>
+                        <span ng-repeat="roles in employees.roles">
+                            <a class="form-control-static" ui-sref="roles-my-suffix-detail({id: roles.id})">{{roles.roleName}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <a ui-sref="magazine-my-suffix-detail({id:employees.magazine.id})">{{employees.magazine.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="employees-my-suffix-detail({id:employees.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="employees-my-suffix.edit({id:employees.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="employees-my-suffix.delete({id:employees.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

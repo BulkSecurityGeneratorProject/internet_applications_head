@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span>Models</span> {{vm.models.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Model Name</span></dt>
+        <dd>
+            <span>{{vm.models.modelName}}</span>
+        </dd>
+        <dt><span>Model Type</span></dt>
+        <dd>
+            <span>{{vm.models.modelType}}</span>
+        </dd>
+        <dt><span>Generic Shoes</span></dt>
+        <dd>
+            <a ui-sref="generic-shoes-my-suffix-detail({id:vm.models.genericShoes.id})">{{vm.models.genericShoes.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="models-my-suffix-detail.edit({id:vm.models.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>
